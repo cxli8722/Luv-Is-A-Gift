@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buzzy News</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <stript src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="news-styles.css">
+  <body>
+
+<div class="d-flex justify-content-end">
+  <div class="mr-auto p-2">Flex item</div>
+  <div class="p-2">Flex item</div>
+  <div class="p-2">Flex item</div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+ 
+  <div class="d-flex justify-content-end">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Buzzy News <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item ">
+       <form action="toGame" method="post">
+        <input type="submit" value="Dom Vio" class="btn btn-secondary">
+    </form>
+      </li>
+      
+    </ul>
+
+   <script>
+      //GOOGLE SEARCH
+      //Enter domain of site to search.
+        var domainroot="http://localhost:5000"
+        function Gsitesearch(curobj){ curobj.q.value="site:"+domainroot+" "+curobj.qfront.value } 
+        </script> 
+        <form class="search navbar-form" action="http://www.google.com/search" method="get"role="search" onSubmit="Gsitesearch(this)"> 
+          <div class="input-group"> <input name="q" type="hidden" /> 
+            <input class="form-control" name="qfront" type="search" required class="searchField" placeholder="Google Search" maxlength="50"/> 
+            <span class="input-group-btn"> <button type="submit" class="search-button btn btn-outline-success  my-2 my-sm-0"> <span class="glyphicon glyphicon-search"></span> Search </button> </span> 
+          </div> 
+        </form>
+    </stript>
+    </div>
+  </div>
+</nav>
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-5  text-center" >Buzzy News</h1>
+      </div>
+
+    <div class="container">
+      <section class="news-header">
+     
+
+      <section class="newsfeed">
+        <form action="showNews" method="post">
+          <button id="showNewsButton" class="btn btn-info">Show News</button>
+        </form> <br>
+     
+
+      
+               <div class="row">
+                    <div class="col-12"> 
+                    {{#news}}
+                    {{#articles}}
+                        <div class="card box-shadow" >
+                        
+                            <img class="card-img-center img-fluid img-thumbnail"  src="{{urlToImage}}" alt="Card image cap">
+                            <div class="card-body">
+                              <h2 class="card-title">{{title}}</h2>
+                              <h4> {{author}} </h4>
+                              <h5 class="card-text"><a href="/login" class="game-link">{{description}}</a></h5><br><br>          
+                            </div><br>
+                          </div>
+                      {{/articles}}
+                      {{/news}}
+                        </div>
+                        <br>
+           
+          </section>
+
+    </div>
+ 
+</div>
+    <footer class="bg-dark fixed-bottom"><a href="https://www.google.com/" target="_blank"><img src="powered_by_google.png"></a>
+    <form action="toGame" method="post">
+        <input type="submit" value="Dom Vio" class="btn btn-secondary">
+    </form>
+     
+    </footer>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
